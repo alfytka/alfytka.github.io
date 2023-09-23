@@ -1,0 +1,10 @@
+.emoji-1 {
+  all: initial;
+  font-size: 36px;
+}
+
+@media screen and (max-width: 664px) {
+  .emoji-1 {
+    font-size: 28px;
+  }
+}
