@@ -6,16 +6,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Alfitka - Frontend Developer</title>
     <link href="./dist/style.css" rel="stylesheet">
+    <link href="./dist/tool.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="relative z-10 mt-12 sm:mt-[5.5rem] px-6 sm:px-8 py-5 max-w-5xl flex justify-between mx-auto bg-gradient-to-r from-cyan-50">
-      <h5 class="flex items-center gap-2 text-lg sm:text-xl font-semibold font-figtree tracking-tight text-cyan-500">
+  <body class="dark:bg-gray-950">
+    <div class="relative z-10 mt-12 sm:mt-[5.5rem] px-6 sm:px-8 py-5 max-w-5xl flex justify-between mx-auto bg-gradient-to-r from-cyan-50 dark:from-cyan-950/70">
+      <h5 class="flex items-center gap-2 text-lg sm:text-xl font-semibold font-figtree tracking-tight text-cyan-500 dark:text-cyan-600">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"></path>
         </svg>
         Portfolio
       </h5>
-      <h5 class="max-sm:hidden text-lg sm:text-xl font-semibold font-figtree tracking-tight text-cyan-500">
+      <h5 class="max-sm:hidden text-lg sm:text-xl font-semibold font-figtree tracking-tight text-cyan-500 dark:text-cyan-600">
         Alfitka Haerul Kurniawan
       </h5>
       <div class="max-sm:hidden absolute right-3 top-14 flex flex-col gap-y-2 items-center">
@@ -27,22 +28,22 @@
             </clipPath>
           </defs>
           <g clip-path="url(#clip-path)">
-            <path d="M27.916 31.4568C20.0191 25.1909 13.7896 18.0721 10.031 8.49523M10.031 8.49523C12.5436 8.84916 15.2028 8.99688 17.7457 8.92371M10.031 8.49523C8.84116 12.6182 8.41809 15.8177 8.49744 20.0916" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <use xlink:href="#curve" stroke="#06b6d4" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M27.916 31.4568C20.0191 25.1909 13.7896 18.0721 10.031 8.49523M10.031 8.49523C12.5436 8.84916 15.2028 8.99688 17.7457 8.92371M10.031 8.49523C8.84116 12.6182 8.41809 15.8177 8.49744 20.0916" class="stroke-cyan-500 dark:stroke-cyan-600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <use xlink:href="#curve" class="stroke-cyan-500 dark:stroke-cyan-600" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </g>
         </svg>
-        <span class="text-base text-cyan-500 font-medium tracking-tight -rotate-6 bg-cyan-50">my name, btw</span>
+        <span class="text-base text-cyan-500 font-medium tracking-tight -rotate-6 bg-cyan-50 dark:text-cyan-600 dark:bg-cyan-950/70">my name, btw</span>
       </div>
     </div>
-    <div class="relative z-10 px-6 sm:px-8 md:px-10 lg:px-12 pt-6 pb-9 sm:py-9 mt-10 max-w-5xl flex justify-between mx-auto bg-gradient-to-r from-cyan-50/60 sm:from-cyan-50 to-transparent border-l-[6px] border-cyan-200">
-      <h1 class="text-[2.50rem] max-sm:leading-10 sm:text-6xl font-figtree font-bold max-w-4xl tracking-tight text-cyan-500 lg:pr-1">
-        <span class="sm:hidden block text-2xl font-medium tracking-tight bg-cyan-100/50 w-max">Alfitka Haerul Kurniawan.</span>
-        seorang front-end developer yang terus <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-cyan-600 to-cyan-500">berkembang</span> disetiap harinya, <span class="font-normal line-through decoration-cyan-50">walau hanya 1%</span>.
+    <div class="relative z-10 px-6 sm:px-8 md:px-10 lg:px-12 pt-6 pb-9 sm:py-9 mt-10 max-w-5xl flex justify-between mx-auto bg-gradient-to-r from-cyan-50/60 sm:from-cyan-50 to-transparent border-l-[6px] border-cyan-200 dark:from-cyan-950/60 dark:sm:from-cyan-950/70 dark:border-cyan-900 dark:sm:border-cyan-800">
+      <h1 class="text-[2.50rem] max-sm:leading-10 sm:text-6xl font-figtree font-bold max-w-4xl tracking-tight text-cyan-500 lg:pr-1 dark:text-cyan-600">
+        <span class="sm:hidden block text-2xl font-medium tracking-tight bg-cyan-100/50 w-max dark:bg-cyan-950/50">Alfitka Haerul Kurniawan.</span>
+        seorang front-end developer yang terus <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-cyan-600 to-cyan-500 dark:from-cyan-600 dark:via-cyan-400 dark:to-cyan-600">berkembang</span> disetiap harinya. <span class="font-normal">new: dark mode</span>.
       </h1>
     </div>
     <div class="isolate">
       <div class="absolute inset-0 -z-10 overflow-hidden">
-        <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-300/40 [mask-image:radial-gradient(40rem 40rem at top,white,transparent)]" aria-hidden="true">
+        <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-300/40 dark:stroke-gray-900 [mask-image:radial-gradient(40rem 40rem at top,white,transparent)]" aria-hidden="true">
           <defs>
             <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="50" height="50" x="50%" y="-1" patternUnits="userSpaceOnUse">
               <path d="M50 100V.5M.5 .5H100" fill="none" />
@@ -55,35 +56,35 @@
         </svg>
       </div>
     </div>
-    <div class="relative z-10 max-w-5xl mx-auto sm:flex justify-center px-5 py-10 sm:p-10 mt-10 sm:divide-x-2 divide-cyan-500 font-figtree gap-x-4 text-lg tracking-tight leading-6 font-normal">
-      <a href="/dist/alfitka-cv.pdf" class="underline decoration-wavy decoration-red-200 hover:decoration-red-400 text-cyan-500 max-sm:border-l-2 max-sm:pl-2 border-cyan-500">
+    <div class="relative z-10 max-w-5xl mx-auto sm:flex justify-center px-5 py-10 sm:p-10 mt-10 sm:divide-x-2 divide-cyan-500 dark:divide-cyan-700 font-figtree gap-x-4 text-lg tracking-tight leading-6 font-normal">
+      <a href="/dist/alfitka-cv.pdf" class="underline decoration-wavy decoration-red-200 dark:decoration-red-600 hover:decoration-red-400 dark:hover:decoration-red-700 text-cyan-500 max-sm:border-l-2 max-sm:pl-2 border-cyan-500 dark:text-cyan-600 dark:border-cyan-700">
         Download My CV
       </a>
-      <p class="flex sm:pl-3 max-sm:pt-1 text-gray-400">
+      <p class="flex sm:pl-3 max-sm:pt-1 text-gray-400 dark:text-gray-500">
         Scroll for more something intresting
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-1 w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
         </svg>
       </p>
     </div>
-    <div class="max-w-full bg-gradient-to-b from-transparent to-cyan-50">
+    <div class="max-w-full bg-gradient-to-b from-transparent to-cyan-50 dark:to-cyan-950/60">
       <div class="max-w-5xl mx-auto pt-32 pb-20">
         <div class="flex items-center gap-x-4 max-lg:px-5">
-          <div class="bg-cyan-100/40 w-9 h-9 flex items-center justify-center rounded-md border border-cyan-200/30">
+          <div class="bg-cyan-100/40 dark:bg-cyan-950/50 w-9 h-9 flex items-center justify-center rounded-md border border-cyan-200/30 dark:border-cyan-900/30">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-cyan-600">
               <path fill-rule="evenodd" d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clip-rule="evenodd" />
             </svg>
           </div>
-          <h1 class="text-3xl sm:text-4xl font-figtree tracking-tighter font-bold text-cyan-600">Introduce Myself</h1>
+          <h1 class="text-3xl sm:text-4xl font-figtree tracking-tighter font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-cyan-600 to-cyan-600 dark:via-cyan-500 dark:to-cyan-600">Introduce Myself</h1>
         </div>
-        <div class="text-lg sm:text-xl my-9 max-sm:px-5 max-lg:pr-10 sm:pl-[4.5rem] lg:pl-[3.25rem] font-figtree tracking-tight leading-7 sm:leading-8 text-cyan-800">
+        <div class="text-lg sm:text-xl my-9 max-sm:px-5 max-lg:pr-10 sm:pl-[4.5rem] lg:pl-[3.25rem] font-figtree tracking-tight leading-7 sm:leading-8 text-cyan-800 dark:text-gray-400">
           <p>
             Hello everyone, saya <span class="font-semibold">Alfitka,</span> seorang fresh graduate dari SMKN 3 Banjar yang bertempat di Kota Banjar, Jawa Barat. Sebelumnya, saya memang merupakan siswa dari jurusan Rekayasa Perangkat Lunak, tidak heran saya tentu memiliki skill dalam hal membangun dan mengembangkan sebuah perangkat lunak khususnya website.
           </p>
           <p class="pt-3 pb-5">
             Quotes yang mengingatkan saya akan <span class="underline">tujuan awal</span>, dari @riskiathaillah:
           </p>
-          <p class="pl-5 sm:pl-7 py-5 border-l-4 bg-gradient-to-r from-cyan-50 to-transparent border-cyan-500 font-normal text-cyan-600">
+          <p class="pl-5 sm:pl-7 py-5 border-l-4 bg-gradient-to-r from-cyan-50 dark:from-cyan-950/50 to-transparent border-cyan-500 dark:border-cyan-800 font-normal text-cyan-600 dark:text-cyan-700">
             Kejar apa yang ingin kau kejar, tapi jangan lupa apa yang mesti kau jaga, <br />
             jadilah apa saja. Khawatirkanlah masa depan <span class="font-semibold">seperlunya</span>, <br />
             kadar <span class="font-semibold">perlu</span> itulah yang membuatmu berusaha, bukan gelisah tak tentu arah, <br />
@@ -111,24 +112,24 @@
         </div>
       </div>
     </div>
-    <div class="max-w-full bg-gradient-to-b from-cyan-50 to-transparent">
+    <div class="max-w-full bg-gradient-to-b from-cyan-50 dark:from-cyan-950/60 to-transparent">
       <div class="max-w-5xl mx-auto pt-14 pb-24 sm:py-24">
         <div class="sm:flex items-center gap-x-4 max-lg:px-5">
-          <div class="bg-blue-100/50 w-10 h-10 sm:w-9 sm:h-9 max-sm:mb-2 flex items-center justify-center rounded-md border border-blue-200/50">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-500">
+          <div class="bg-blue-100/50 dark:bg-blue-950/50 w-10 h-10 sm:w-9 sm:h-9 max-sm:mb-2 flex items-center justify-center rounded-md border border-blue-200/50 dark:border-blue-900/50">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-500 dark:text-blue-600">
               <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 01.878.645 49.17 49.17 0 01.376 5.452.657.657 0 01-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 00-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 01-.595 4.845.75.75 0 01-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 01-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 01-.658.643 49.118 49.118 0 01-4.708-.36.75.75 0 01-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 005.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 00.659-.663 47.703 47.703 0 00-.31-4.82.75.75 0 01.83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 00.657-.642z" />
             </svg>
           </div>
-          <h1 class="text-3xl sm:text-4xl font-figtree tracking-tighter font-normal text-blue-500">
-            Latest <span class="underline font-bold decoration-wavy decoration-2 decoration-red-300">Project.</span> <span class="font-normal"> what do you think?</span>
+          <h1 class="text-3xl sm:text-4xl font-figtree tracking-tighter font-normal text-blue-500 dark:text-blue-600">
+            Latest <span class="underline font-bold decoration-wavy decoration-2 decoration-red-300 dark:decoration-red-600">Project.</span> <span class="font-normal"> what do you think?</span>
           </h1>
         </div>
-        <div class="text-lg sm:text-xl my-9 max-sm:px-5 max-lg:pr-10 sm:pl-[4.5rem] lg:pl-[3.25rem] font-figtree tracking-tight leading-7 sm:leading-8 text-blue-400">
+        <div class="text-lg sm:text-xl my-9 max-sm:px-5 max-lg:pr-10 sm:pl-[4.5rem] lg:pl-[3.25rem] font-figtree tracking-tight leading-7 sm:leading-8 text-blue-400 dark:text-gray-400">
           <p class="max-w-3xl">
             Proyek yang pernah saya kerjakan terutama selama saya bersekolah, tidak lain adalah sebagai bahan melatih kemampuan saya menjadi developer muda di masa sekarang dan yang akan datang.
           </p>
         </div>
-        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 border-l-[3px] sm:border-l-2 sm:border-t-2 border-blue-300 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-blue-50 to-blue-100 overflow-hidden">
+        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 dark:text-gray-400 border-l-[3px] sm:border-l-2 sm:border-t-2 border-blue-300 dark:border-blue-950 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-blue-50 to-blue-100 dark:via-blue-900/10 dark:to-blue-950 overflow-hidden">
           <div class="md:pr-10">
             <h2 class="flex items-center gap-x-3 text-2xl font-figtree tracking-tight leading-7 font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 max-sm:self-start w-7 h-7">
@@ -139,7 +140,7 @@
             </h2>
             <p class="max-w-3xl text-lg font-figtree tracking-tight pt-5">
               Sidumasari merupakan sebuah sistem pengaduan masyarakat berbasis web yang bertujuan untuk memberikan sarana kepada masyarakat Kecamatan Langensari dalam melaporkan berbagai kejadian atau permasalahan yang memerlukan perhatian. Kunjungi
-              <a href="https://sidumasari.com" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-blue-100/60 border-blue-300/70 hover:bg-blue-100">
+              <a href="https://sidumasari.com" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-blue-100/60 border-blue-300/70 hover:bg-blue-100 dark:text-gray-400 dark:bg-blue-900/30 dark:border-blue-900/80 dark:hover:bg-blue-900/50">
                 sidumasari.com
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -155,7 +156,7 @@
               </div>
             </div>
           </div>
-          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-blue-100/10 rounded-xl shadow-md">
+          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-blue-100/10 dark:bg-blue-50/5 rounded-xl shadow-md">
             <img 
               src="dist/images/img-4.png" 
               alt="imgProject" 
@@ -171,7 +172,7 @@
             </div>
           </div>
         </div>
-        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 border-l-[3px] sm:border-l-2 sm:border-t-2 border-emerald-200 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-emerald-50 to-emerald-100 overflow-hidden">
+        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 dark:text-gray-400 border-l-[3px] sm:border-l-2 sm:border-t-2 border-emerald-200 dark:border-emerald-900 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-emerald-50 to-emerald-100 dark:via-emerald-900/10 dark:to-emerald-900 overflow-hidden">
           <div class="md:pr-10">
             <h2 class="flex items-center gap-x-2 text-2xl font-figtree tracking-tight leading-7 font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-7 h-7">
@@ -181,7 +182,7 @@
             </h2>
             <p class="max-w-3xl text-lg font-figtree tracking-tight pt-5">
               Proyek ini merupakan upaya sekolah dalam me-redesign tampilan antarmuka situs webnya. Dengan ini saya dipercaya untuk melakukan redesign user interface menggunakan markup language HTML dan bantuan UI framework Tailwind CSS. Kunjungi
-              <a href="https://www.smkn3-banjar.sch.id/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-emerald-100/60 border-emerald-300/70 hover:bg-emerald-100">
+              <a href="https://www.smkn3-banjar.sch.id/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-emerald-100/60 border-emerald-300/70 hover:bg-emerald-100 dark:text-gray-400 dark:bg-emerald-900/30 dark:border-emerald-900/80 dark:hover:bg-emerald-900/50">
                 smkn3-banjar.sch.id
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -193,7 +194,7 @@
               <img class="h-4 mt-5 ml-2" src="dist/images/tailwindcss-logotype.svg" alt="tailwindLogo" />
             </p>
           </div>
-          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-cyan-50/20 rounded-xl shadow-md">
+          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-cyan-50/20 dark:bg-emerald-50/5 rounded-xl shadow-md">
             <img 
               src="dist/images/img-5.png" 
               alt="imgProject" 
@@ -205,7 +206,7 @@
             <img class="h-4 mt-4 ml-2" src="dist/images/tailwindcss-logotype.svg" alt="tailwindLogo" />
           </p>
         </div>
-        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 border-l-[3px] sm:border-l-2 sm:border-t-2 border-blue-300 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-blue-50 to-blue-100 overflow-hidden">
+        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 dark:text-gray-400 border-l-[3px] sm:border-l-2 sm:border-t-2 border-blue-300 dark:border-blue-900/60 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent via-blue-50 to-blue-100 dark:via-blue-900/10 dark:to-blue-900/60 overflow-hidden">
           <div class="md:pr-10">
             <h2 class="flex items-center gap-x-3 text-2xl font-figtree tracking-tight leading-7 font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-7 h-7">
@@ -215,7 +216,7 @@
             </h2>
             <p class="max-w-3xl text-lg font-figtree tracking-tight pt-5">
               Sebuah website statis yang dibangun oleh RPL 1 Developer Team, atas dasar mengenang 3 tahun kebersamaan selama menjadi peserta didik di SMKN 3 Banjar serta menuangkan ide kreatif dalam hal melatih hard skill seperti halnya membangun sebuah website. Kunjungi
-              <a href="https://rplone-smkn3banjar.github.io/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-blue-100/60 border-blue-300/70 hover:bg-blue-100">
+              <a href="https://rplone-smkn3banjar.github.io/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-0.5 text-sm font-medium rounded-full border text-cyan-900 bg-blue-100/60 border-blue-300/70 hover:bg-blue-100 dark:text-gray-400 dark:bg-blue-900/20 dark:border-blue-900/70 dark:hover:bg-blue-900/40">
                 rplone-smkn3banjar.github.io
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -227,7 +228,7 @@
               <img class="h-4 mt-5 ml-2" src="dist/images/tailwindcss-logotype.svg" alt="tailwindLogo" />
             </p>
           </div>
-          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-blue-100/10 rounded-xl shadow-md">
+          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-blue-100/10 dark:bg-blue-50/5 rounded-xl shadow-md">
             <img 
               src="dist/images/img-1.png" 
               alt="imgProject" 
@@ -239,7 +240,7 @@
             <img class="h-4 mt-4 ml-2" src="dist/images/tailwindcss-logotype.svg" alt="tailwindLogo" />
           </p>
         </div>
-        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 border-l-[3px] sm:border-l-2 sm:border-t-2 border-red-200 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent to-red-50 overflow-hidden">
+        <div class="ml-5 sm:mx-5 mb-12 sm:ml-[4.5rem] lg:ml-[3.20rem] block lg:flex px-6 sm:px-10 py-9 text-cyan-800 dark:text-gray-400 border-l-[3px] sm:border-l-2 sm:border-t-2 border-red-200 dark:border-red-950 sm:border sm:rounded-2xl bg-gradient-to-br from-transparent to-red-50 dark:to-red-900/50 overflow-hidden">
           <div class="md:pr-10">
             <h2 class="flex items-center gap-x-3 text-2xl font-figtree tracking-tight leading-7 font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-7 h-7">
@@ -258,7 +259,7 @@
               </div>
             </div>
           </div>
-          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-red-50/10 rounded-xl shadow-md">
+          <div class="max-lg:mx-auto max-lg:my-5 w-72 h-fit bg-red-50/10 dark:bg-red-50/5 rounded-xl shadow-md">
             <img 
               src="dist/images/img-2.png" 
               alt="imgProject" 
@@ -276,9 +277,9 @@
       </div>
     </div>
     <div class="max-w-5xl mx-auto mt-10 mb-20 sm:my-20">
-      <div class="sm:p-5 bg-gray-100 sm:border sm:border-gray-200 rounded-[1.25rem] max-sm:mx-0 max-lg:mx-5">
-        <div class="relative isolate overflow-hidden lg:overflow-visible py-12 sm:py-14 px-5 sm:px-12 sm:rounded-t-xl bg-white sm:border border-gray-200">
-          <div class="absolute inset-0 text-gray-200 overflow-hidden sm:rounded-t-xl">
+      <div class="sm:p-5 bg-gray-100 dark:bg-black sm:border sm:border-gray-200 dark:sm:border-gray-800 rounded-[1.25rem] max-sm:mx-0 max-lg:mx-5">
+        <div class="relative isolate overflow-hidden lg:overflow-visible py-12 sm:py-14 px-5 sm:px-12 sm:rounded-t-xl bg-white dark:bg-gray-950 sm:border border-gray-200 dark:border-gray-800">
+          <div class="absolute inset-0 text-gray-200 dark:text-gray-800 overflow-hidden sm:rounded-t-xl">
             <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="pricing-pattern" width="32" height="32" patternUnits="userSpaceOnUse" x="50%" y="100%" patternTransform="translate(0 -1)">
@@ -289,9 +290,9 @@
             </svg>
           </div>
           <div class="relative flex flex-row items-center gap-x-4 justify-between">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-figtree tracking-tighter font-bold flex justify-self-start leading-none text-indigo-500 bg-indigo-50">Little Experience</h1>
-            <div class="bg-white border w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-indigo-500">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-figtree tracking-tighter font-bold flex justify-self-start leading-none text-indigo-500 bg-indigo-50 dark:text-indigo-700 dark:bg-indigo-950/70">Little Experience</h1>
+            <div class="bg-white dark:bg-gray-950/70 border dark:border-gray-800 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-indigo-500 dark:text-indigo-700">
                 <path d="M11.644 1.59a.75.75 0 01.712 0l9.75 5.25a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.712 0l-9.75-5.25a.75.75 0 010-1.32l9.75-5.25z" />
                 <path d="M3.265 10.602l7.668 4.129a2.25 2.25 0 002.134 0l7.668-4.13 1.37.739a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.71 0l-9.75-5.25a.75.75 0 010-1.32l1.37-.738z" />
                 <path d="M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z" />
@@ -299,8 +300,8 @@
             </div>
           </div>
         </div>
-        <div class="relative isolate overflow-hidden lg:overflow-visible mt-2 sm:mt-5 py-10 sm:py-11 px-5 sm:px-12 sm:rounded-b-xl bg-white sm:border border-gray-200">
-          <div class="absolute inset-0 text-gray-200 overflow-hidden sm:rounded-b-xl">
+        <div class="relative isolate overflow-hidden lg:overflow-visible mt-2 sm:mt-5 py-10 sm:py-11 px-5 sm:px-12 sm:rounded-b-xl bg-white sm:border border-gray-200 dark:bg-gray-950 dark:border-gray-800">
+          <div class="absolute inset-0 text-gray-200 dark:text-gray-800 overflow-hidden sm:rounded-b-xl">
             <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <pattern id="pricing-pattern" width="32" height="32" patternUnits="userSpaceOnUse" x="50%" y="100%" patternTransform="translate(0 -1)">
@@ -311,17 +312,17 @@
             </svg>
           </div>
           <div class="relative">
-            <p class="max-w-2xl font-figtree text-lg font-normal tracking-tight leading-8 text-gray-600">
-              <span class="bg-indigo-100">Pengalaman</span> yang <span class="bg-indigo-100">saya</span> dapatkan selama ini yaitu mulai dari <span class="bg-indigo-100">Praktek Kerja Lapangan</span> di salah satu perusahaan <span class="bg-indigo-100">software house</span> dan <span class="bg-indigo-100">keikutsertaan dalam mengikuti ajang perlombaan LKS SMK se-Jawa Barat</span> Tahun 2022.
+            <p class="max-w-2xl font-figtree text-lg font-normal tracking-tight leading-8 text-gray-600 dark:text-gray-400">
+              <span class="bg-indigo-100 dark:bg-indigo-950/80">Pengalaman</span> yang <span class="bg-indigo-100 dark:bg-indigo-950/80">saya</span> dapatkan selama ini yaitu mulai dari <span class="bg-indigo-100 dark:bg-indigo-950/80">Praktek Kerja Lapangan</span> di salah satu perusahaan <span class="bg-indigo-100 dark:bg-indigo-950/80">software house</span> dan <span class="bg-indigo-100 dark:bg-indigo-950/80">keikutsertaan dalam mengikuti ajang perlombaan LKS SMK se-Jawa Barat</span> Tahun 2022.
             </p>
           </div>
           <div class="relative flex items-center justify-between mt-14">
-            <div class="font-figtree tracking-tight text-gray-700">
-              <h2 class="flex gap-x-2 text-xl sm:text-2xl font-bold items-center tracking-tighter pt-3 sm:pt-2 underline decoration-wavy decoration-red-400"><img class="h-11 md:hidden" src="dist/images/lks-logo.png" alt="lksLogo" /> LKS SMK Prov. Jawa Barat <span class="max-sm:hidden">Tahun 2022</span></h2>
+            <div class="font-figtree tracking-tight text-gray-700 dark:text-gray-400">
+              <h2 class="flex gap-x-2 text-xl sm:text-2xl font-bold items-center tracking-tighter pt-3 sm:pt-2 underline decoration-wavy decoration-red-400 dark:decoration-red-600"><img class="h-11 md:hidden" src="dist/images/lks-logo.png" alt="lksLogo" /> LKS SMK Prov. Jawa Barat <span class="max-sm:hidden">Tahun 2022</span></h2>
               <p class="pt-5 sm:pt-9 pb-1 font-semibold">
                 19 July 2022 - As a participant
               </p>
-              <p class="max-w-xl text-lg font-normal tracking-tight leading-8 text-gray-700">
+              <p class="max-w-xl text-lg font-normal tracking-tight leading-8 text-gray-700 dark:text-gray-400">
                 Diberi kesempatan untuk mengikuti ajang perlombaan tingkat provinsi Jawa Barat yang dimeriahkan langsung oleh para peserta lomba siswa/i SMK.
               </p>
               <p class="font-semibold pt-9">
@@ -340,12 +341,12 @@
             <div class="w-40 h-40 max-md:hidden lg:ml-14 md:mr-10">
               <img src="dist/images/accessmedia-logo.png" alt="accessMediaLogo" />
             </div>
-            <div class="font-figtree tracking-tight text-gray-700">
-              <h2 class="flex gap-x-2 text-xl sm:text-2xl font-bold items-center tracking-tighter pt-3 sm:pt-2 underline decoration-wavy decoration-red-400"><img class="w-14 md:hidden" src="dist/images/accessmedia-logo.png" alt="accessMediaLogo" /><span class="max-sm:hidden">Software House: </span>Access Media</h2>
+            <div class="font-figtree tracking-tight text-gray-700 dark:text-gray-400">
+              <h2 class="flex gap-x-2 text-xl sm:text-2xl font-bold items-center tracking-tighter pt-3 sm:pt-2 underline decoration-wavy decoration-red-400 dark:decoration-red-600"><img class="w-14 md:hidden" src="dist/images/accessmedia-logo.png" alt="accessMediaLogo" /><span class="max-sm:hidden">Software House: </span>Access Media</h2>
               <p class="pt-8 sm:pt-9 pb-1 font-semibold">
                 Praktik Kerja Lapangan (7 Feb - 14 Apr 2022)
               </p>
-              <p class="max-w-xl text-lg font-normal tracking-tight leading-8 text-gray-700">
+              <p class="max-w-xl text-lg font-normal tracking-tight leading-8 text-gray-700 dark:text-gray-400">
                 Turut membantu perusahaan dalam mengelola data client, menuliskan tata cara penggunaan aplikasi yang dikembangkan untuk kemudahan penggunaan bagi client, dan membuat video tutorial yang diunggah pada channel YouTube Access Media.
               </p>
               <p class="font-semibold pt-9">
@@ -358,7 +359,7 @@
             </div>
           </div>
           <div class="relative footer flex justify-center pt-16">
-            <h1 class="font-figtree text-sm tracking-tight font-medium leading-8  text-gray-500">
+            <h1 class="font-figtree text-sm tracking-tight font-medium leading-8 text-gray-500 dark:text-gray-400">
               Portfolio - Alfitka Haerul Kurniawan
             </h1>
           </div>
@@ -366,7 +367,7 @@
       </div>
     </div>
     <div class="max-w-5xl relative isolate mx-auto mt-28 max-lg:px-5">
-      <div class="absolute inset-0 text-gray-200 overflow-hidden sm:rounded-b-xl">
+      <div class="absolute inset-0 text-gray-200 dark:text-gray-800 overflow-hidden sm:rounded-b-xl">
         <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="pricing-pattern" width="32" height="32" patternUnits="userSpaceOnUse" x="50%" y="100%" patternTransform="translate(0 -1)">
@@ -377,18 +378,18 @@
         </svg>
       </div>
       <div class="relative flex flex-col space-y-10 pt-9 sm:pt-10 pb-20 md:px-3">
-        <h1 class="text-4xl sm:text-5xl font-bold font-figtree tracking-tight text-cyan-600/60">
-          Hello, world &#x1F30D;
+        <h1 class="text-4xl sm:text-5xl font-bold font-figtree tracking-tight text-cyan-600/60 dark:bg-clip-text dark:text-transparent dark:bg-gradient-to-r dark:from-cyan-800 dark:via-cyan-500 dark:via-10% dark:sm:to-30% dark:to-cyan-800 relative">
+          Hello, world <span style="all: initial; font-size: inherit;">&#x1F30D;</span>
         </h1>
-        <h1 class="max-w-4xl text-3xl sm:text-4xl md:text-5xl font-medium font-figtree tracking-tight leading-8 sm:leading-[3.25rem] text-cyan-600/60">
-          Saya Alfitka, kesukaan saya terhadap <span class="italic">programming</span> &#x1F9D1;&#x200D;&#x1F4BB; membuat rasa penasaran <span class="text-3xl sm:text-4xl ">&#129300;</span> saya semakin menjadi-jadi akan IT.
+        <h1 class="max-w-4xl text-3xl sm:text-4xl md:text-5xl font-medium font-figtree tracking-tight leading-8 sm:leading-[3.25rem] text-cyan-600/60 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-cyan-800 dark:to-cyan-400">
+          Saya Alfitka, kesukaan saya terhadap <span class="italic">programming</span> <span class="emoji-1">&#x1F9D1;&#x200D;&#x1F4BB;</span> membuat rasa penasaran <span class="emoji-1">&#129300;</span> saya semakin menjadi-jadi akan IT.
         </h1>
-        <h1 class="max-w-4xl pt-1.5 md:ml-16 text-3xl sm:text-4xl md:text-5xl font-medium font-figtree tracking-tight leading-8 sm:leading-[3.25rem] text-cyan-600/60">
-          Dari ketertarikan dan tekad belajar yang kuat <span class="text-3xl sm:text-4xl">&#9994;</span> menjadikan saya terus berkembang <span class="text-3xl sm:text-4xl">&#x1F556;</span> disetiap harinya.
+        <h1 class="max-w-4xl pt-1.5 md:ml-16 text-3xl sm:text-4xl md:text-5xl font-medium font-figtree tracking-tight leading-8 sm:leading-[3.25rem] text-cyan-600/60 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-cyan-400 dark:to-cyan-800">
+          Dari ketertarikan dan tekad belajar yang kuat <span class="emoji-1">&#9994;</span> menjadikan saya terus berkembang <span class="emoji-1">&#x1F556;</span> disetiap harinya.
         </h1>
-        <div class="flex max-sm:flex-col gap-8 sm:gap-10 pt-0.5 sm:pt-[1.20rem] sm:pl-12 md:pl-20 lg:pl-[7.7rem]">
+        <div class="flex max-sm:flex-col gap-4 sm:gap-10 pt-0.5 sm:pt-[1.85rem] sm:pl-12 md:pl-20 lg:pl-[7.7rem]">
           <img src="dist/images/me-1.jpg" class="w-28 sm:w-32 rounded-full" alt="alfitka" />
-          <div class="font-figtree tracking-tight text-gray-700">
+          <div class="font-figtree tracking-tight text-gray-700 dark:text-gray-500">
             <h2 class="text-2xl font-semibold">Kenali akun saya</h2>
             <div class="flex items-center gap-2 text-lg font-medium pt-[2.10rem]">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -406,10 +407,25 @@
         </div>
       </div>
     </div>
-    <div class="max-w-5xl mx-auto px-5 py-8 sm:p-10">
-      <p class="text-base sm:text-lg font-figtree tracking-tight text-gray-700">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-5 py-8 sm:p-10">
+      <p class="text-base sm:text-lg font-figtree tracking-tight text-gray-700 dark:text-gray-500">
         Made with Tailwind CSS by Alfitka
       </p>
+      <div class="flex items-center justify-center gap-2">
+        <span class="max-sm:hidden text-base font-medium tracking-tight leading-7 text-gray-500">Theme</span>
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+      </div>
     </div>
+    <script>
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script src="./dist/script.js"></script>
   </body>
 </html>
