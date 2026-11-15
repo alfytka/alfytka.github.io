@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* Ledger tokens — mirror of mockup-portfolio/ledger-tokens.css (light mode).
+   Dark mode is planned for v2. */
+@theme {
+  --breakpoint-xl: 68.75rem; /* 1100px */
+
+  --color-paper: #f6f6f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #fafaf8;
+  --color-ink: #121212;
+  --color-ink-2: #4a4a46;
+  --color-muted: #6f6f69;
+  --color-placeholder: #74746e;
+  --color-hairline: #e2e1dc;
+  --color-hairline-soft: #eeede9;
+  --color-control: #d6d5d0;
+  --color-control-strong: #c9c8c2;
+  --color-chip: #f3f3f0;
+  --color-pill: #eeeeea;
+  --color-disabled: #ecebe7;
+  --color-selection: #dfff4f;
+  --color-selection-edge: #c9e63a;
+  --color-error: #b42318;
+  --color-error-soft: #fdecea;
+  --color-code: #161615;
+  --color-code-ink: #d9d9d3;
+  --color-code-muted: #8a8a84;
+}
+
+@theme inline {
+  --font-sans: var(--font-host-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fragment-mono), ui-monospace, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    /* Anchor offset: clears the floating section index on desktop (top: 16px + 42px pill);
+       on mobile the index sits at the bottom, so a small gap is enough. */
+    scroll-padding-top: 24px;
+    /* Mobile: keep focused/scrolled-to elements clear of the always-visible bottom pill. */
+    scroll-padding-bottom: 80px;
+    @variant md {
+      scroll-padding-top: 88px;
+      scroll-padding-bottom: 0px;
+    }
+    /* In-page anchors (#work, #about…) glide instead of jumping.
+       The reduced-motion block below turns this back to auto. */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-selection);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  input::placeholder {
+    color: var(--color-placeholder);
+    opacity: 1;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* The only motion on the site: a short colour transition. */
+@utility ease-ledger {
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
