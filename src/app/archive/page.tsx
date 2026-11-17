@@ -2,13 +2,28 @@ import type { Metadata } from "next";
 import { Column, SectionHeader } from "@/components/ledger";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { archive } from "@/content/profile";
+import { archive, person } from "@/content/profile";
 import { formatMonth, toYearMonth } from "@/lib/months";
+
+const shareImageAlt = `${person.name} — Front-end developer building data-heavy internal tools at Universitas Terbuka.`;
+const description = "School and internship projects, 2020–2023. Small, but where it started.";
 
 export const metadata: Metadata = {
   title: "Archive",
-  description: "School and internship projects, 2020–2023.",
+  description,
   alternates: { canonical: "/archive/" },
+  // A page's openGraph replaces the root one as a whole (no deep merge), so the shared
+  // fields are repeated here; otherwise a shared /archive/ link previews as the home page.
+  openGraph: {
+    type: "website",
+    url: "/archive/",
+    siteName: person.name,
+    title: `Archive — ${person.name}`,
+    description,
+    locale: "en_US",
+    // The file-based image in src/app/ is dropped once this page sets openGraph.
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: shareImageAlt }],
+  },
 };
 
 export default function ArchivePage() {
