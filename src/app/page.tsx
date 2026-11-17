@@ -58,6 +58,7 @@ export default function Home() {
             <LedgerRow label="Now">
               <Mark>{intro.now}</Mark>
             </LedgerRow>
+            <LedgerRow label="Open to">{intro.openTo}</LedgerRow>
             <LedgerRow label="Based in" aside={<LocalTime />}>
               {person.location}
             </LedgerRow>

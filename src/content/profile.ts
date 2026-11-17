@@ -30,6 +30,7 @@ export const intro = {
   supporting:
     "Three years in, after starting full-stack with Laravel and PostgreSQL. These days I work in React, Next.js and TypeScript, and I care most about the parts of an interface people touch all day: a filter that remembers, an error that explains itself, a table that stays readable when the data doesn’t fit.",
   now: "E-Tax Management, Universitas Terbuka",
+  openTo: "Remote front-end roles, in Indonesia or abroad",
   studying: { label: "Information Systems, Universitas Terbuka", years: "2024–2028" },
 } as const;
 
