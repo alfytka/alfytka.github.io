@@ -20,7 +20,7 @@ const fragmentMono = localFont({
 });
 
 const description =
-  "Front-end developer at Universitas Terbuka, building data-heavy internal tools: tables, forms and dashboards.";
+  "Front-end developer at Universitas Terbuka, building data-heavy internal tools: tables, forms and dashboards. Open to remote roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(person.site),
