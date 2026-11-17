@@ -37,13 +37,13 @@
   html {
     background: var(--color-paper);
     color: var(--color-ink);
-    /* Anchor offset: clears the floating section index on desktop (top: 16px + 42px pill);
+    /* Anchor offset: clears the floating section index and its 96px edge fade on desktop;
        on mobile the index sits at the bottom, so a small gap is enough. */
     scroll-padding-top: 24px;
-    /* Mobile: keep focused/scrolled-to elements clear of the always-visible bottom pill. */
-    scroll-padding-bottom: 80px;
+    /* Mobile: keep focused/scrolled-to elements clear of the bottom pill and its 96px fade. */
+    scroll-padding-bottom: 104px;
     @variant md {
-      scroll-padding-top: 88px;
+      scroll-padding-top: 104px;
       scroll-padding-bottom: 0px;
     }
     /* In-page anchors (#work, #about…) glide instead of jumping.
@@ -76,6 +76,19 @@
 
 @utility tabular {
   font-variant-numeric: tabular-nums;
+}
+
+/* Where content scrolls under the floating section index, it fades into the page colour
+   so the pill keeps a calm field around it. The colour is the --color-paper token itself
+   (a mask shapes the fade, no colour mixing), so a dark theme only redefines that token.
+   edge-fade-up sits at the bottom edge (mobile), edge-fade-down at the top edge (desktop). */
+@utility edge-fade-up {
+  background-color: var(--color-paper);
+  mask-image: linear-gradient(to top, #000 12%, rgb(0 0 0 / 0.75) 40%, rgb(0 0 0 / 0.35) 70%, transparent);
+}
+@utility edge-fade-down {
+  background-color: var(--color-paper);
+  mask-image: linear-gradient(to bottom, #000 12%, rgb(0 0 0 / 0.75) 40%, rgb(0 0 0 / 0.35) 70%, transparent);
 }
 
 /* The only motion on the site: a short colour transition. */

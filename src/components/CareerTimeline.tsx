@@ -194,7 +194,7 @@ function BarTooltip({ boundsRef, children }: { boundsRef: RefObject<HTMLElement 
   return (
     <span
       ref={ref}
-      className="absolute bottom-[calc(100%+8px)] left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2.5 py-1.5 text-left"
+      className="absolute bottom-[calc(100%+8px)] left-1/2 z-50 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-2.5 py-1.5 text-left"
     >
       {children}
     </span>
