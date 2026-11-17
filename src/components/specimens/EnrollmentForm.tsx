@@ -1,19 +1,29 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  CODE_LINES,
-  PROGRAMS,
-  PROGRAM_LABELS,
-  enrollment,
-  type Enrollment,
-  type EnrollmentInput,
-} from "./enrollment";
+import { CODE_LINES, PROGRAMS, PROGRAM_LABELS, enrollment, type Enrollment, type EnrollmentInput } from "./enrollment";
 import { SpecimenCaption, SpecimenFrame } from "./SpecimenFrame";
 
 const FIELD_ORDER: (keyof Enrollment)[] = ["studentId", "program", "semester", "credits"];
+const TABS = ["form", "schema"] as const;
+type Tab = (typeof TABS)[number];
+
+// Below md the two panels are tabs; from md up they sit side by side and the tab
+// semantics would be wrong, so they only apply on small screens.
+const SMALL = "(max-width: 47.999rem)";
+const subscribeSmall = (onChange: () => void) => {
+  const mq = window.matchMedia(SMALL);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+};
+const useSmallScreen = () =>
+  useSyncExternalStore(
+    subscribeSmall,
+    () => window.matchMedia(SMALL).matches,
+    () => false,
+  );
 
 function resultLines(data: Enrollment): string[] {
   return [
@@ -35,7 +45,29 @@ export function EnrollmentForm() {
   const ids = useId();
   const [saved, setSaved] = useState<Enrollment | null>(null);
   const [flash, setFlash] = useState(false);
-  const [mobileTab, setMobileTab] = useState<"form" | "schema">("form");
+  const [mobileTab, setMobileTab] = useState<Tab>("form");
+  const small = useSmallScreen();
+  const tabId = (tab: Tab) => `${ids}-tab-${tab}`;
+  const panelProps = (tab: Tab) => (small ? { role: "tabpanel" as const, "aria-labelledby": tabId(tab) } : {});
+
+  // Arrow keys / Home / End move between the tabs and select them (WAI-ARIA tabs).
+  const onTabKey = (event: KeyboardEvent<HTMLDivElement>) => {
+    const i = TABS.indexOf(mobileTab);
+    const next =
+      event.key === "ArrowRight"
+        ? TABS[(i + 1) % TABS.length]
+        : event.key === "ArrowLeft"
+          ? TABS[(i - 1 + TABS.length) % TABS.length]
+          : event.key === "Home"
+            ? TABS[0]
+            : event.key === "End"
+              ? TABS[TABS.length - 1]
+              : null;
+    if (!next) return;
+    event.preventDefault();
+    setMobileTab(next);
+    document.getElementById(tabId(next))?.focus();
+  };
   const flashTimer = useRef<number | undefined>(undefined);
 
   const {
@@ -83,8 +115,7 @@ export function EnrollmentForm() {
   const issueCount = FIELD_ORDER.filter((f) => errors[f]).length;
   const ok = (f: keyof Enrollment) => !errors[f] && (validated || touchedFields[f] || dirtyFields[f]);
 
-  const inputBase =
-    "h-10 w-full rounded-md border bg-surface px-3 text-[15px] outline-none ease-ledger md:text-[14px]";
+  const inputBase = "h-10 w-full rounded-md border bg-surface px-3 text-[15px] outline-none ease-ledger md:text-[14px]";
   const inputState = (f: keyof Enrollment) =>
     errors[f]
       ? "border-error border-[1.5px] shadow-[0_0_0_3px_rgba(180,35,24,0.13)]"
@@ -99,17 +130,25 @@ export function EnrollmentForm() {
         shortTitle="Specimen 02 — Validated form"
         shortNote="dummy data"
         note="Reconstructed · type in the form, the schema reacts"
+        source="src/components/specimens/EnrollmentForm.tsx"
       />
       {/* Mobile only: form and schema share the space as two tabs. */}
-      <div role="tablist" aria-label="Specimen view" className="flex gap-1 border-b border-hairline bg-surface-2 p-2 md:hidden">
-        {(["form", "schema"] as const).map((tab) => {
+      <div
+        role="tablist"
+        aria-label="Specimen view"
+        onKeyDown={onTabKey}
+        className="flex gap-1 border-b border-hairline bg-surface-2 p-2 md:hidden"
+      >
+        {TABS.map((tab) => {
           const selected = mobileTab === tab;
           return (
             <button
               key={tab}
+              id={tabId(tab)}
               type="button"
               role="tab"
               aria-selected={selected}
+              tabIndex={selected ? 0 : -1}
               aria-controls={`${ids}-panel-${tab}`}
               onClick={() => setMobileTab(tab)}
               className={[
@@ -130,6 +169,7 @@ export function EnrollmentForm() {
       <div className="grid grid-cols-1 xl:grid-cols-[500px_minmax(0,1fr)]">
         <form
           id={`${ids}-panel-form`}
+          {...panelProps("form")}
           onSubmit={(event) => void handleSubmit(onValid)(event)}
           noValidate
           className={`flex-col gap-[18px] p-4 md:flex md:p-7 ${mobileTab === "form" ? "flex" : "hidden"}`}
@@ -234,7 +274,11 @@ export function EnrollmentForm() {
           </div>
         </form>
 
-        <div id={`${ids}-panel-schema`} className={`md:block ${mobileTab === "schema" ? "block" : "hidden"}`}>
+        <div
+          id={`${ids}-panel-schema`}
+          {...panelProps("schema")}
+          className={`md:block ${mobileTab === "schema" ? "block" : "hidden"}`}
+        >
           <CodePanel errors={FIELD_ORDER.filter((f) => errors[f])} saved={shownResult} />
         </div>
       </div>
@@ -244,7 +288,10 @@ export function EnrollmentForm() {
 
 function Check() {
   return (
-    <span aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[14px] text-muted">
+    <span
+      aria-hidden="true"
+      className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[14px] text-muted"
+    >
       &#10003;
     </span>
   );
@@ -260,9 +307,17 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 }
 
 function CodePanel({ errors, saved }: { errors: (keyof Enrollment)[]; saved: Enrollment | null }) {
-  const lines = saved ? resultLines(saved).map((text, i) => ({ text, hit: i === 1 })) : CODE_LINES.map((l) => ({ text: l.text, hit: !!l.field && errors.includes(l.field) }));
+  const lines = saved
+    ? resultLines(saved).map((text, i) => ({ text, hit: i === 1 }))
+    : CODE_LINES.map((l) => ({ text: l.text, hit: !!l.field && errors.includes(l.field) }));
   return (
-    <div className="h-full overflow-x-auto rounded-b-[10px] bg-code py-5 font-mono text-[12.5px] leading-[22px] text-code-ink md:text-[13px] xl:rounded-b-none xl:rounded-br-[10px]">
+    // Focusable so keyboard users can scroll long lines sideways.
+    <div
+      tabIndex={0}
+      role="region"
+      aria-label={saved ? "Parse result" : "Schema source"}
+      className="h-full overflow-x-auto rounded-b-[10px] bg-code py-5 font-mono text-[12.5px] leading-[22px] text-code-ink md:text-[13px] xl:rounded-b-none xl:rounded-br-[10px]"
+    >
       <p className="px-5 pb-4 text-[12px] text-code-muted md:px-7">
         {saved ? "result — enrollment.safeParse(form)" : "enrollment.schema.ts"}
       </p>

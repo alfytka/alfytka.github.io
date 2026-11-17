@@ -17,6 +17,8 @@ export const person = {
     githubLabel: "alfytka",
     linkedin: "https://www.linkedin.com/in/alfitka-haerul-kurniawan",
     linkedinLabel: "in/alfitka-haerul-kurniawan",
+    // This site's own repository; specimens link to their source files in it.
+    source: "https://github.com/alfytka/alfytka.github.io",
     // TODO(content): add the PDF to /public with this exact name.
     cv: "/cv-alfitka-haerul-kurniawan.pdf",
   },

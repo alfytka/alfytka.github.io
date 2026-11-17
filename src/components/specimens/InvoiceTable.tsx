@@ -353,7 +353,13 @@ export function InvoiceTable() {
 
   return (
     <SpecimenFrame>
-      <SpecimenCaption title="Specimen 01 — Filterable data table" shortTitle="Specimen 01 — Data table" note={caption} shortNote="dummy data" />
+      <SpecimenCaption
+        title="Specimen 01 — Filterable data table"
+        shortTitle="Specimen 01 — Data table"
+        note={caption}
+        shortNote="dummy data"
+        source="src/components/specimens/InvoiceTable.tsx"
+      />
 
       {/* Toolbar */}
       <div className="flex flex-col gap-2 px-3.5 py-3 md:flex-row md:items-center md:gap-2 md:px-5 md:py-4">
@@ -560,7 +566,9 @@ export function InvoiceTable() {
                 <li key={row.id}>
                   <label
                     className={[
+                      // The checkbox is visually hidden, so the row itself shows keyboard focus.
                       "flex cursor-pointer flex-col gap-1 border-t px-3.5 py-3 ease-ledger",
+                      "has-[:focus-visible]:outline-2 has-[:focus-visible]:-outline-offset-2 has-[:focus-visible]:outline-ink",
                       selected ? "border-selection-edge bg-selection" : "border-hairline-soft",
                     ].join(" ")}
                   >
