@@ -68,6 +68,18 @@
     outline-offset: 2px;
   }
 
+  /* No lone word on the last line: headings even out their lines, body text avoids orphans.
+     Browsers without support just wrap as before. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p,
+  blockquote {
+    text-wrap: pretty;
+  }
+
   input::placeholder {
     color: var(--color-placeholder);
     opacity: 1;

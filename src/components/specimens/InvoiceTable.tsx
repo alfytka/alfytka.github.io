@@ -116,21 +116,22 @@ function Checkbox({
 }
 
 function StatusPill({ status, emphasis = false }: { status: InvoiceStatus; emphasis?: boolean }) {
+  // Every pill carries a 1px border (transparent unless Pending) so all three are the same height.
   const style =
     status === "Paid"
-      ? "bg-pill text-ink-2"
+      ? "border-transparent bg-pill text-ink-2"
       : status === "Rejected"
-        ? "bg-error-soft text-error"
-        : `border bg-surface text-ink ${emphasis ? "border-ink" : "border-control"}`;
+        ? "border-transparent bg-error-soft text-error"
+        : `bg-surface text-ink ${emphasis ? "border-ink" : "border-control"}`;
   return (
-    <span className={`inline-block rounded-[4px] px-2 py-[3px] text-[12px] font-medium leading-[14px] ${style}`}>
+    <span className={`inline-block rounded-[4px] border px-2 py-[3px] text-[12px] font-medium leading-[14px] ${style}`}>
       {status}
     </span>
   );
 }
 
 function SortGlyph({ dir }: { dir: false | "asc" | "desc" }) {
-  if (!dir) return <span aria-hidden="true" className="opacity-0 group-hover:opacity-40">&darr;</span>;
+  if (!dir) return <span aria-hidden="true" className="opacity-0 group-hover:opacity-40 group-focus-visible:opacity-40">&darr;</span>;
   return <span aria-hidden="true">{dir === "asc" ? "↑" : "↓"}</span>;
 }
 
@@ -506,14 +507,15 @@ export function InvoiceTable() {
           </thead>
           <tbody aria-busy={loading}>
             {loading
-              ? Array.from({ length: pagination.pageSize }, (_, i) => (
-                  <tr key={`sk-${i}`} className="h-12 border-b border-hairline-soft" aria-hidden="true">
+              ? // One placeholder per row the page will show, so the table keeps its height.
+                rows.map((row) => (
+                  <tr key={`sk-${row.id}`} className="h-12 border-b border-hairline-soft" aria-hidden="true">
                     <td className="pl-5"><span className="block size-4 rounded-[4px] bg-pill" /></td>
                     <td><span className="block h-2.5 w-32 rounded-[3px] bg-disabled" /></td>
                     <td><span className="block h-2.5 w-[60%] rounded-[3px] bg-disabled" /></td>
                     <td><span className="block h-2.5 w-14 rounded-[3px] bg-disabled" /></td>
                     <td><span className="ml-auto block h-2.5 w-20 rounded-[3px] bg-disabled" /></td>
-                    <td className="pl-6 xl:pl-10"><span className="block h-5 w-14 rounded-[4px] bg-pill" /></td>
+                    <td className="pl-6 xl:pl-10"><span className="block h-[22px] w-14 rounded-[4px] bg-pill" /></td>
                   </tr>
                 ))
               : rows.map((row) => {
@@ -553,10 +555,18 @@ export function InvoiceTable() {
       {/* Mobile: stacked rows */}
       <ul className="md:hidden" aria-busy={loading}>
         {loading
-          ? Array.from({ length: 3 }, (_, i) => (
-              <li key={`msk-${i}`} aria-hidden="true" className="flex flex-col gap-2 border-t border-hairline-soft px-3.5 py-3.5">
-                <span className="block h-2.5 w-28 rounded-[3px] bg-disabled" />
-                <span className="block h-3 w-44 rounded-[3px] bg-disabled" />
+          ? // Same count and box as the rows that replace them: a status-pill line (22px) and
+            // one line of 15px text, so the list (and the pagination under it) doesn't jump.
+            rows.map((row) => (
+              <li key={`msk-${row.id}`} aria-hidden="true" className="flex flex-col gap-1 border-t border-hairline-soft px-3.5 py-3">
+                <span className="flex h-[22px] items-center justify-between">
+                  <span className="block h-2.5 w-28 rounded-[3px] bg-disabled" />
+                  <span className="block h-[22px] w-14 rounded-[4px] bg-pill" />
+                </span>
+                <span className="flex h-[1.5em] items-center justify-between gap-3 text-[15px]">
+                  <span className="block h-3 w-44 rounded-[3px] bg-disabled" />
+                  <span className="block h-2.5 w-20 rounded-[3px] bg-disabled" />
+                </span>
               </li>
             ))
           : rows.map((row) => {

@@ -39,7 +39,17 @@ export function CopyEmailRow() {
         ].join(" ")}
         aria-label={`Copy email address ${person.email}`}
       >
-        <span className="text-[13px] text-muted group-hover:text-ink md:text-[15px]">Email</span>
+        <span className={`text-[13px] group-hover:text-ink md:text-[15px] ${copied ? "text-ink" : "text-muted"}`}>
+          {/* Phones have no room for the Copy badge, so the label confirms the copy instead. */}
+          {copied ? (
+            <>
+              <span className="md:hidden">Copied ✓</span>
+              <span className="hidden md:inline">Email</span>
+            </>
+          ) : (
+            "Email"
+          )}
+        </span>
         <span className="text-[15px] font-medium">{person.email}</span>
         <span
           className={[
